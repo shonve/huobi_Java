@@ -1,13 +1,9 @@
 package com.huobi.model.generic;
 
-import java.math.BigDecimal;
-
 import com.alibaba.fastjson.annotation.JSONField;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
+
+import java.math.BigDecimal;
 
 @Data
 @Builder
@@ -33,6 +29,8 @@ public class Symbol {
   @JSONField(name = "symbol-partition")
   private String symbolPartition;
 
+  private String state;
+
   @JSONField(name = "value-precision")
   private Integer valuePrecision;
 
@@ -45,16 +43,17 @@ public class Symbol {
   @JSONField(name = "min-order-value")
   private BigDecimal minOrderValue;
 
-  @JSONField(name = "leverage-ratio")
-  private Integer leverageRatio;
-
-  private String state;
-
   @JSONField(name = "limit-order-min-order-amt")
   private BigDecimal limitOrderMinOrderAmt;
 
   @JSONField(name = "limit-order-max-order-amt")
   private BigDecimal limitOrderMaxOrderAmt;
+
+  @JSONField(name = "limit-order-max-buy-amt")
+  private BigDecimal limitOrderMaxBuyAmt;
+
+  @JSONField(name = "limit-order-max-sell-amt")
+  private BigDecimal limitOrderMaxSellAmt;
 
   @JSONField(name = "sell-market-min-order-amt")
   private BigDecimal sellMarketMinOrderAmt;
@@ -72,6 +71,14 @@ public class Symbol {
 
   @JSONField(name = "mgmt-fee-rate")
   private BigDecimal mgmtFeeRate;
+
+  @JSONField(name = "leverage-ratio")
+  private Integer leverageRatio;
+
+  @JSONField(name = "api-trading")
+  private String apiTrading;
+
+  private String tags;
 
   @JSONField(name = "charge-time")
   private String chargeTime;
